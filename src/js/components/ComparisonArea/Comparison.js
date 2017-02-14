@@ -2,13 +2,14 @@ import React from "react";
 
 export default class Comparison extends React.Component {
   render() {
-    const { categorySubcategoryCounts } = this.props;
+    const { categorySubcategoryCounts, left, right } = this.props;
     let offset = 0;
 
     return (
       <section class="comparison">
         {
-          categorySubcategoryCounts.map((c, i) => {
+          left && right
+          ? categorySubcategoryCounts.map((c, i) => {
             offset += c;
 
             return (
@@ -19,6 +20,7 @@ export default class Comparison extends React.Component {
               </article>
             )
           })
+          : null
         }
       </section>
     )

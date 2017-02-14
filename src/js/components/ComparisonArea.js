@@ -95,6 +95,19 @@ export default class ComparisonForm extends React.Component {
     if (!character.length)
       return null;
 
+    let world;
+    const name = character[0].value.replace(/ <.*/, (match) => {
+      world = match.replace('<small>', '').replace('</small>', '');
+      return '';
+    });
+
+    if (!categories.length)
+      return {
+        name: name,
+        world: world,
+        categories: null
+      }
+
     // Remove Legacy.
     if (categories[1].value === "Legacy") {
       categories.splice(1,1);
@@ -107,12 +120,6 @@ export default class ComparisonForm extends React.Component {
       progress.splice(35,1);
       subcategories.splice(35,1);
     }
-
-    let world;
-    const name = character[0].value.replace(/ <.*/, (match) => {
-      world = match.replace('<small>', '').replace('</small>', '');
-      return '';
-    });
 
     return {
       name: name,
