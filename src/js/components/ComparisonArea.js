@@ -13,7 +13,7 @@ export default class ComparisonForm extends React.Component {
       loading: false
     }
 
-    this.categorySubcategoryCounts = [8, 8, 5, 8, 3, 3, 4, 7];
+    this.categorySubcategoryCounts = [9, 8, 5, 8, 3, 3, 4, 7];
   }
 
   render() {
@@ -108,11 +108,16 @@ export default class ComparisonForm extends React.Component {
         categories: null
       }
 
+    if (subcategories[9].value !== "Ranked PvP") {
+      subcategories.splice(9, 0, { value: "Ranked PvP" });
+      progress.splice(9, 0, { value: "100% complete<br>0/0 points" });
+    }
+
     // Remove Legacy.
     if (categories[1].value === "Legacy") {
       categories.splice(1,1);
-      progress.splice(9,8);
-      subcategories.splice(9,8);
+      progress.splice(10,8);
+      subcategories.splice(10,8);
     }
 
     // Remove Seasonal Events.
