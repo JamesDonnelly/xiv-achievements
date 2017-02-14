@@ -120,7 +120,7 @@ export default class ComparisonForm extends React.Component {
       const { callback } = this.props;
       const { char1, char2 } = this.state;
 
-      history.replaceState({}, "Comparing", "/#/" + (char1 || "none") + "/" + (char2 || "none"));
+      history.replaceState({}, "Comparing", window.location.pathname + "/#/" + (char1 || "none") + "/" + (char2 || "none"));
 
       this.setState({
         loading: true
