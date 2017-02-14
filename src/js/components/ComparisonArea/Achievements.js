@@ -15,10 +15,20 @@ export default class Achievements extends React.Component {
 
     return (
       <section class={"achievements" + (left ? " left" : "")}>
-        <h2 class={right ? "text-right": null}>
-          {data.name}<br />
-          <small class="text-muted">{data.world}</small>
-        </h2>
+        {
+          left
+          ? (
+            <h2 class={right ? "text-right": null}>
+              {data.name}<br />
+              <small class="points">{data.points}</small><small class="text-muted">{data.world}</small>
+            </h2>
+          ) : (
+            <h2 class={right ? "text-right": null}>
+              {data.name}<br />
+              <small class="text-muted">{data.world}</small><small class="points">{data.points}</small>
+            </h2>
+          )
+        }
         {
           data.categories instanceof Array && data.categories.length
           ? data.categories.map((c, i) => {

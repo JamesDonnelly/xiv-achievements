@@ -90,7 +90,7 @@ export default class ComparisonForm extends React.Component {
   }
 
   processData(data) {
-    let { categories, character, progress, subcategories } = data;
+    let { categories, character, points, progress, subcategories } = data;
 
     if (!character.length)
       return null;
@@ -104,6 +104,7 @@ export default class ComparisonForm extends React.Component {
     if (!categories.length)
       return {
         name: name,
+        points: "?",
         world: world,
         categories: null
       }
@@ -121,13 +122,14 @@ export default class ComparisonForm extends React.Component {
     }
 
     // Remove Seasonal Events.
-    if (subcategories[35].value === "Seasonal Events") {
-      progress.splice(35,1);
-      subcategories.splice(35,1);
+    if (subcategories[36].value === "Seasonal Events") {
+      progress.splice(36,1);
+      subcategories.splice(36,1);
     }
 
     return {
       name: name,
+      points: points[0].value,
       world: world,
       categories: categories,
       progress: this.populateCategoryDataObject(progress, "progress"),
