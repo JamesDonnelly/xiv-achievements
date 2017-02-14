@@ -1,0 +1,62 @@
+.comparison {
+  padding-top: 98px;
+
+  article {
+    margin-bottom: 49px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .progress {
+    border-radius: 0;
+    display: block;
+    height: 35px;
+    margin: 5px 0;
+    position: relative;
+
+    &:first-child {
+      margin-top: 4px;
+    }
+
+    &:last-child {
+      margin-bottom: 4px;
+    }
+
+    span {
+      display: block;
+      height: 100%;
+    }
+
+    &::after {
+      border-right: 1px dashed #424242;
+      content: "";
+      height: 35px;
+      position: absolute;
+      top: 0;
+      left: 50%;
+    }
+  }
+
+  .yellow {
+      background: #FFF59D;
+    }
+
+  .blue {
+    background: #F48FB1;
+    border-right: 1px solid #F06292;
+    box-sizing: border-box;
+  }
+
+  .category-total {
+    &.yellow {
+      background: #FFF176;
+    }
+
+    .blue {
+      background: #F06292;
+      border-right-color: #EC407A;
+    }
+  }
+}

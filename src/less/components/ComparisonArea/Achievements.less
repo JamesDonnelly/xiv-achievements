@@ -1,0 +1,85 @@
+.achievements {
+  h2 {
+    height: 66px;
+    line-height: 24px;
+    overflow: hidden;
+    margin: 0 0 10px;
+  }
+
+  h4 {
+    line-height: 19px;
+    margin: 10px 0 4px;
+  }
+
+  table {
+    margin: 0 0 20px;
+    table-layout: fixed;
+
+    &.table-striped {
+      tbody {
+        tr {
+          &:nth-of-type(odd) {
+            background: #353535;
+          }
+
+          &:nth-of-type(even) {
+            background: #212121;
+          }
+
+          th,
+          td {
+            border: 1px solid #424242;
+            height: 40px;
+            line-height: 37px;
+            overflow: hidden;
+            padding: 0 12px;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+          }
+
+          th {
+            font-weight: normal;
+          }
+
+          td {
+            width: 100px;
+          }
+        }
+      }
+    }
+  }
+
+  .complete {
+    font-weight: bold;
+  }
+
+  .total {
+    color: #BDBDBD;
+    font-family: monospace;
+  }
+
+  article {
+    &:last-child {
+      table {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .category-total {
+    background: #FFF176 !important;
+    color: #000;
+
+    .total {
+      color: #000;
+    }
+  }
+
+  &.left {
+    color: #F48FB1;
+
+    .category-total {
+      background: #F06292 !important;
+    }
+  }
+}
