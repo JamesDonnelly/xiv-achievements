@@ -13,7 +13,7 @@ export default class ComparisonForm extends React.Component {
       loading: false
     }
 
-    this.categorySubcategoryCounts = [8, 8, 5, 8, 3, 4, 4, 7];
+    this.categorySubcategoryCounts = [8, 8, 5, 8, 3, 3, 4, 7];
   }
 
   render() {
@@ -100,6 +100,12 @@ export default class ComparisonForm extends React.Component {
       categories.splice(1,1);
       progress.splice(9,8);
       subcategories.splice(9,8);
+    }
+
+    // Remove Seasonal Events.
+    if (subcategories[35].value === "Seasonal Events") {
+      progress.splice(35,1);
+      subcategories.splice(35,1);
     }
 
     let world;
