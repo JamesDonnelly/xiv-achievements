@@ -28,6 +28,7 @@
   },
   "scripts": {
     "dev": "webpack-dev-server --port 81 --content-base src",
+    "deploy": "(SET NODE_ENV=production) && webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
