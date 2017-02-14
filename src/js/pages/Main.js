@@ -119,7 +119,7 @@ export default class Main extends React.Component {
   loadCharacter(character, resolve, reject) {
     let jsonData = JSON.stringify({
       "character": [{"elem": ".character-profile h1", "value": "html"}],
-      "points": [{"elem": ".character-achievements [data-ac=\"0\"] .ac-data-figure", "value": "text"}],
+      "points": [{"elem": ".character-achievements [data-ac=\"0\"] .cc-data-figure", "value": "text"}],
       "categories": [{"elem": ".ac-list-title", "value": "text"}],
       "subcategories": [{"elem": ".ac-list-group button", "value": "text"}],
       "progress": [{"elem": ".ac-list-group button", "value": "data-tt"}]

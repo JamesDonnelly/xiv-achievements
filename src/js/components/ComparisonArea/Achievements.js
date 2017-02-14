@@ -20,12 +20,12 @@ export default class Achievements extends React.Component {
           ? (
             <h2 class={right ? "text-right": null}>
               {data.name}<br />
-              <small class="points">{data.points}</small><small class="text-muted">{data.world}</small>
+              <small class="text-muted">{data.world}</small><small class="points"><abbr title="Total points excluding Legacy and Seasonal Events">{data.points}</abbr></small>
             </h2>
           ) : (
             <h2 class={right ? "text-right": null}>
               {data.name}<br />
-              <small class="text-muted">{data.world}</small><small class="points">{data.points}</small>
+              <small class="points"><abbr title="Total points excluding Legacy and Seasonal Events">{data.points}</abbr></small><small class="text-muted">{data.world}</small>
             </h2>
           )
         }
