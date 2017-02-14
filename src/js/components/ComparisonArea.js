@@ -92,15 +92,15 @@ export default class ComparisonForm extends React.Component {
   processData(data) {
     let { categories, character, progress, subcategories } = data;
 
+    if (!character.length)
+      return null;
+
     // Remove Legacy.
     if (categories[1].value === "Legacy") {
       categories.splice(1,1);
       progress.splice(9,8);
       subcategories.splice(9,8);
     }
-
-    if (!character.length)
-      return null;
 
     let world;
     const name = character[0].value.replace(/ <.*/, (match) => {
