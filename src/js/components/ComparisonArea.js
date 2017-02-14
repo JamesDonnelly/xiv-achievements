@@ -16,15 +16,12 @@ export default class ComparisonForm extends React.Component {
     this.categorySubcategoryCounts = [8, 8, 5, 8, 3, 4, 4, 7];
   }
 
-  componentWillMount() {
-  }
-
   render() {
     const { char1Data, char1Loading, char2Data, char2Loading, loading } = this.state;
 
     return (
       <section id="comparison-area" class="row">
-        <article class="col-xs-12 col-sm-4 col-md-5">
+        <article class="col-xs-12 col-sm-4 col-md-4">
           {
             char1Loading
             ? (
@@ -36,7 +33,7 @@ export default class ComparisonForm extends React.Component {
             )
           }
         </article>
-        <article class="col-xs-12 col-sm-4 col-md-2">
+        <article class="col-xs-12 col-sm-4 col-md-4">
           {
             loading || !char1Data || !char2Data
             ? (
@@ -46,7 +43,7 @@ export default class ComparisonForm extends React.Component {
             )
           }
         </article>
-        <article class="col-xs-12 col-sm-4 col-md-5">
+        <article class="col-xs-12 col-sm-4 col-md-4">
           {
             char2Loading
             ? (
@@ -93,7 +90,14 @@ export default class ComparisonForm extends React.Component {
   }
 
   processData(data) {
-    const { categories, character, progress, subcategories } = data;
+    let { categories, character, progress, subcategories } = data;
+
+    // Remove Legacy.
+    if (categories[1].value === "Legacy") {
+      categories.splice(1,1);
+      progress.splice(9,8);
+      subcategories.splice(9,8);
+    }
 
     if (!character.length)
       return null;
