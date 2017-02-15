@@ -40,11 +40,18 @@ export default class Comparison extends React.Component {
       leftCategoryComplete += +leftProgress;
       rightCategoryComplete += +rightProgress;
 
-      result.push(
-        <span class="progress yellow" key={"comparison-progress-" + i + "-" + j}>
-          <span class="blue" style={{ width: ((100/(leftProgress+rightProgress))*leftProgress) + "%" }}></span>
-        </span>
-      )
+      if (leftProgress === rightProgress)
+        result.push(
+          <span class="progress yellow" key={"comparison-progress-" + i + "-" + j}>
+            <span class="blue" style={{ width: "50%" }}></span>
+          </span>
+        )
+      else
+        result.push(
+          <span class="progress yellow" key={"comparison-progress-" + i + "-" + j}>
+            <span class="blue" style={{ width: ((100/(leftProgress+rightProgress))*leftProgress) + "%" }}></span>
+          </span>
+        )
     }
 
     result.push(
