@@ -126,6 +126,10 @@ export default class ComparisonForm extends React.Component {
       progress.splice(36,1);
       subcategories.splice(36,1);
     }
+    else if (subcategories[37].value === "Seasonal Events") {
+      progress.splice(37,1);
+      subcategories.splice(37,1);
+    }
 
     return {
       name: name,
